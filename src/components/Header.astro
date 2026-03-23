@@ -1,6 +1,5 @@
 ---
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/listings", label: "Listings" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -107,7 +106,8 @@ const navLinks = [
     menuButton.setAttribute('aria-expanded', String(!isExpanded));
     mobileMenu?.classList.toggle('hidden');
     openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
+    closeIcon?.classList.add('hidden');
+    menuButton?.focus();
   });
 
   // Close menu on escape key

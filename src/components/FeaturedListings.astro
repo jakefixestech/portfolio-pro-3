@@ -77,9 +77,11 @@ function formatPrice(price: number): string {
             </div>
           </div>
           <div class="p-6">
-            <p class="text-2xl font-bold text-navy">
-              {formatPrice(listing.price)}
-            </p>
+            <div aria-label={`Listed at ${formatPrice(listing.price)}`}>
+              <span class="text-2xl font-bold text-navy">
+                {formatPrice(listing.price)}
+              </span>
+            </div>
             <h3 class="mt-2 text-lg font-semibold text-gray-800">
               {listing.address}
             </h3>
@@ -109,6 +111,7 @@ function formatPrice(price: number): string {
             <a 
               href={`/listings/${listing.id}`}
               class="mt-6 block w-full text-center px-6 py-3 bg-navy hover:bg-navy-light text-white font-semibold rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2"
+              aria-label={`View details for ${listing.address}, ${listing.city}`}
             >
               View Details
             </a>
