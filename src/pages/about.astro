@@ -9,11 +9,11 @@ import Footer from '../components/Footer.astro';
   
   <main id="main-content">
     <!-- Page Hero -->
-    <section class="bg-primary py-20 relative">
-      <div class="absolute top-0 left-0 w-24 h-1 bg-accent"></div>
+    <section class="bg-navy py-20 relative">
+      <div class="absolute top-0 left-0 w-24 h-1 bg-gold"></div>
       <div class="max-w-6xl mx-auto px-4 text-center">
         <h1 class="font-heading text-4xl md:text-5xl text-white mb-4">About North Country Realty Group</h1>
-        <p class="text-xl text-slate-300 max-w-2xl mx-auto">Serving Lancaster, NH and the North Country region since 1999.</p>
+        <p class="text-xl text-white max-w-2xl mx-auto">Serving Lancaster, NH and the North Country region since 1999.</p>
       </div>
     </section>
 
@@ -22,8 +22,8 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-12 items-center">
           <div class="lg:w-1/2">
-            <h2 id="our-story-heading" class="font-heading text-3xl md:text-4xl text-primary mb-6">Rooted in the North Country</h2>
-            <div class="space-y-4 text-foreground leading-relaxed">
+            <h2 id="our-story-heading" class="font-heading text-3xl md:text-4xl text-navy mb-6">Rooted in the North Country</h2>
+            <div class="space-y-4 text-gray-700 leading-relaxed">
               <p>
                 North Country Realty Group was founded in 1999 with a simple mission: to provide honest, personalized real estate services to the families and communities of northern New Hampshire. As a locally owned and operated agency, we understand that buying or selling a home is one of life's most significant decisions.
               </p>
@@ -36,7 +36,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="lg:w-1/2">
-            <div class="bg-muted rounded-lg overflow-hidden shadow-lg">
+            <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
               <img 
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop" 
                 alt="North Country Realty Group office in Lancaster, NH" 
@@ -50,67 +50,63 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Our Values -->
-    <section class="py-20 bg-primary" aria-labelledby="values-heading">
+    <section class="py-20 bg-navy" aria-labelledby="values-heading">
       <div class="max-w-6xl mx-auto px-4">
         <h2 id="values-heading" class="font-heading text-3xl md:text-4xl text-white text-center mb-12">Our Values</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Community First -->
           <article class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="w-14 h-14 bg-primary-dark rounded-lg flex items-center justify-center">
-                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div class="w-14 h-14 bg-navy-dark rounded-lg flex items-center justify-center">
+                <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
             </div>
             <div>
               <h3 class="font-heading text-xl text-white mb-2">Community First</h3>
-              <p class="text-slate-300 leading-relaxed">We live here, we work here, and we're invested in the success of our neighbors and local businesses. Our community is our foundation.</p>
+              <p class="text-gray-300 leading-relaxed">We live here, we work here, and we're invested in the success of our neighbors and local businesses. Our community is our foundation.</p>
             </div>
           </article>
 
-          <!-- Local Expertise -->
           <article class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="w-14 h-14 bg-primary-dark rounded-lg flex items-center justify-center">
-                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div class="w-14 h-14 bg-navy-dark rounded-lg flex items-center justify-center">
+                <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>
               </div>
             </div>
             <div>
               <h3 class="font-heading text-xl text-white mb-2">Local Expertise</h3>
-              <p class="text-slate-300 leading-relaxed">We know every town, trail, and corner of the North Country. Our local knowledge helps you make informed decisions about where to call home.</p>
+              <p class="text-gray-300 leading-relaxed">We know every town, trail, and corner of the North Country. Our local knowledge helps you make informed decisions about where to call home.</p>
             </div>
           </article>
 
-          <!-- Honest Guidance -->
           <article class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="w-14 h-14 bg-primary-dark rounded-lg flex items-center justify-center">
-                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div class="w-14 h-14 bg-navy-dark rounded-lg flex items-center justify-center">
+                <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
             </div>
             <div>
               <h3 class="font-heading text-xl text-white mb-2">Honest Guidance</h3>
-              <p class="text-slate-300 leading-relaxed">We believe in transparency and straight talk. You'll always get our honest assessment, whether it's about pricing, timing, or the right property for your needs.</p>
+              <p class="text-gray-300 leading-relaxed">We believe in transparency and straight talk. You'll always get our honest assessment, whether it's about pricing, timing, or the right property for your needs.</p>
             </div>
           </article>
 
-          <!-- Lasting Relationships -->
           <article class="flex gap-4">
             <div class="flex-shrink-0">
-              <div class="w-14 h-14 bg-primary-dark rounded-lg flex items-center justify-center">
-                <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <div class="w-14 h-14 bg-navy-dark rounded-lg flex items-center justify-center">
+                <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
             </div>
             <div>
               <h3 class="font-heading text-xl text-white mb-2">Lasting Relationships</h3>
-              <p class="text-slate-300 leading-relaxed">Our clients become our friends. We're here for you long after the closing — whether you need a contractor recommendation or just want to say hello.</p>
+              <p class="text-gray-300 leading-relaxed">Our clients become our friends. We're here for you long after the closing — whether you need a contractor recommendation or just want to say hello.</p>
             </div>
           </article>
         </div>
@@ -120,53 +116,50 @@ import Footer from '../components/Footer.astro';
     <!-- Meet the Team -->
     <section class="py-20 bg-white" aria-labelledby="team-heading">
       <div class="max-w-6xl mx-auto px-4">
-        <h2 id="team-heading" class="font-heading text-3xl md:text-4xl text-primary text-center mb-12">Meet Our Team</h2>
+        <h2 id="team-heading" class="font-heading text-3xl md:text-4xl text-navy text-center mb-12">Meet Our Team</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Agent 1 -->
-          <article class="bg-muted rounded-lg p-8 text-center shadow-sm">
-            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center" aria-hidden="true">
+          <article class="bg-gray-50 rounded-lg p-8 text-center shadow-sm">
+            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-navy flex items-center justify-center" aria-hidden="true">
               <span class="text-3xl font-heading text-white">MH</span>
             </div>
-            <h3 class="font-heading text-xl text-primary mb-1">Margaret Hayes</h3>
-            <p class="text-accent font-medium mb-4">Broker/Owner</p>
-            <p class="text-foreground text-sm leading-relaxed mb-6">Margaret founded North Country Realty in 1999 and has helped over 300 families find their dream homes in the region.</p>
+            <h3 class="font-heading text-xl text-navy mb-1">Margaret Hayes</h3>
+            <p class="text-gold font-medium mb-4">Broker/Owner</p>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">Margaret founded North Country Realty in 1999 and has helped over 300 families find their dream homes in the region.</p>
             <a 
               href="/contact" 
-              class="inline-block bg-accent text-primary font-semibold px-6 py-2 rounded hover:bg-accent-hover transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              class="inline-block bg-gold text-navy font-semibold px-6 py-2 rounded hover:bg-gold-dark transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
               aria-label="Contact Margaret Hayes"
             >
               Contact Margaret
             </a>
           </article>
 
-          <!-- Agent 2 -->
-          <article class="bg-muted rounded-lg p-8 text-center shadow-sm">
-            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center" aria-hidden="true">
+          <article class="bg-gray-50 rounded-lg p-8 text-center shadow-sm">
+            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-navy flex items-center justify-center" aria-hidden="true">
               <span class="text-3xl font-heading text-white">JT</span>
             </div>
-            <h3 class="font-heading text-xl text-primary mb-1">James Thompson</h3>
-            <p class="text-accent font-medium mb-4">Buyer's Agent</p>
-            <p class="text-foreground text-sm leading-relaxed mb-6">James specializes in helping first-time buyers navigate the market and find affordable homes throughout Coos County.</p>
+            <h3 class="font-heading text-xl text-navy mb-1">James Thompson</h3>
+            <p class="text-gold font-medium mb-4">Buyer's Agent</p>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">James specializes in helping first-time buyers navigate the market and find affordable homes throughout Coos County.</p>
             <a 
               href="/contact" 
-              class="inline-block bg-accent text-primary font-semibold px-6 py-2 rounded hover:bg-accent-hover transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              class="inline-block bg-gold text-navy font-semibold px-6 py-2 rounded hover:bg-gold-dark transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
               aria-label="Contact James Thompson"
             >
               Contact James
             </a>
           </article>
 
-          <!-- Agent 3 -->
-          <article class="bg-muted rounded-lg p-8 text-center shadow-sm">
-            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center" aria-hidden="true">
+          <article class="bg-gray-50 rounded-lg p-8 text-center shadow-sm">
+            <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-navy flex items-center justify-center" aria-hidden="true">
               <span class="text-3xl font-heading text-white">SB</span>
             </div>
-            <h3 class="font-heading text-xl text-primary mb-1">Sarah Bennett</h3>
-            <p class="text-accent font-medium mb-4">Listing Specialist</p>
-            <p class="text-foreground text-sm leading-relaxed mb-6">Sarah's marketing expertise and attention to detail have helped sellers achieve top dollar for their properties since 2015.</p>
+            <h3 class="font-heading text-xl text-navy mb-1">Sarah Bennett</h3>
+            <p class="text-gold font-medium mb-4">Listing Specialist</p>
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">Sarah's marketing expertise and attention to detail have helped sellers achieve top dollar for their properties since 2015.</p>
             <a 
               href="/contact" 
-              class="inline-block bg-accent text-primary font-semibold px-6 py-2 rounded hover:bg-accent-hover transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              class="inline-block bg-gold text-navy font-semibold px-6 py-2 rounded hover:bg-gold-dark transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
               aria-label="Contact Sarah Bennett"
             >
               Contact Sarah
@@ -177,24 +170,24 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- By the Numbers -->
-    <section class="py-16 bg-primary" aria-labelledby="stats-heading">
+    <section class="py-16 bg-navy" aria-labelledby="stats-heading">
       <h2 id="stats-heading" class="sr-only">Our Achievements</h2>
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <p class="text-4xl md:text-5xl font-heading text-accent mb-2">25+</p>
+            <p class="text-4xl md:text-5xl font-heading text-gold mb-2">25+</p>
             <p class="text-white text-sm md:text-base">Years in Business</p>
           </div>
           <div>
-            <p class="text-4xl md:text-5xl font-heading text-accent mb-2">500+</p>
+            <p class="text-4xl md:text-5xl font-heading text-gold mb-2">500+</p>
             <p class="text-white text-sm md:text-base">Homes Sold</p>
           </div>
           <div>
-            <p class="text-4xl md:text-5xl font-heading text-accent mb-2">3</p>
+            <p class="text-4xl md:text-5xl font-heading text-gold mb-2">3</p>
             <p class="text-white text-sm md:text-base">Licensed Agents</p>
           </div>
           <div>
-            <p class="text-4xl md:text-5xl font-heading text-accent mb-2">10+</p>
+            <p class="text-4xl md:text-5xl font-heading text-gold mb-2">10+</p>
             <p class="text-white text-sm md:text-base">Towns Served</p>
           </div>
         </div>
@@ -202,20 +195,20 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA Banner -->
-    <section class="py-20 bg-muted" aria-labelledby="cta-heading">
+    <section class="py-20 bg-gray-50" aria-labelledby="cta-heading">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 id="cta-heading" class="font-heading text-3xl md:text-4xl text-primary mb-4">Ready to Find Your North Country Home?</h2>
-        <p class="text-foreground text-lg mb-8 max-w-2xl mx-auto">Whether you're buying, selling, or just exploring your options — our team is here to help.</p>
+        <h2 id="cta-heading" class="font-heading text-3xl md:text-4xl text-navy mb-4">Ready to Find Your North Country Home?</h2>
+        <p class="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">Whether you're buying, selling, or just exploring your options — our team is here to help.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
             href="/listings" 
-            class="inline-block bg-accent text-primary font-semibold px-8 py-3 rounded hover:bg-accent-hover transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+            class="inline-block bg-gold text-navy font-semibold px-8 py-3 rounded hover:bg-gold-dark transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
           >
             Browse Listings
           </a>
           <a 
             href="/contact" 
-            class="inline-block border-2 border-primary text-primary font-semibold px-8 py-3 rounded hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            class="inline-block border-2 border-navy text-navy font-semibold px-8 py-3 rounded hover:bg-navy hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2"
           >
             Contact Us
           </a>
