@@ -81,7 +81,7 @@ const listings = [
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-4">
           Browse Our Listings
         </h1>
-        <p class="text-lg text-white max-w-2xl mx-auto">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
           Explore available properties across Lancaster, NH and the surrounding North Country region.
         </p>
       </div>
@@ -162,6 +162,7 @@ const listings = [
                     <polyline stroke-linecap="round" stroke-linejoin="round" stroke-width="1" points="9,22 9,12 15,12 15,22" />
                   </svg>
                 </div>
+                <!-- Status Badge -->
                 <span class="absolute top-3 left-3 px-3 py-1 bg-gold text-navy text-sm font-semibold rounded">
                   {listing.status}
                 </span>
@@ -172,14 +173,12 @@ const listings = [
                 <h3 class="text-gray-700 font-medium mb-2">
                   {listing.address}
                 </h3>
-                <div aria-label={`Listed at ${listing.price}`}>
-                  <span class="text-2xl font-heading font-bold text-navy mb-4 block">
-                    {listing.price}
-                  </span>
-                </div>
+                <p class="text-2xl font-heading font-bold text-navy mb-4">
+                  {listing.price}
+                </p>
 
-                <!-- Stats Row -->
-                {listing.type !== "Land" ? (
+                <!-- Stats Row - Non-Land Properties -->
+                {listing.type !== "Land" && (
                   <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <span class="flex items-center gap-1.5" aria-label={`${listing.beds} bedrooms`}>
                       <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -200,7 +199,10 @@ const listings = [
                       <span>{listing.sqft} sqft</span>
                     </span>
                   </div>
-                ) : (
+                )}
+                
+                <!-- Stats Row - Land Properties -->
+                {listing.type === "Land" && (
                   <div class="flex items-center gap-1.5 text-sm text-gray-600 mb-4" aria-label={`${listing.sqft} lot size`}>
                     <svg class="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
@@ -215,9 +217,10 @@ const listings = [
                 </span>
 
                 <!-- View Details Button -->
-                
+                <a
                   href={`/listings/${listing.id}`}
                   class="block w-full text-center px-6 py-3 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+                  aria-label={`View details for ${listing.address}`}
                 >
                   View Details
                 </a>
@@ -228,7 +231,7 @@ const listings = [
 
         <!-- Pagination -->
         <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Pagination">
-          
+          <a
             href="#"
             class="px-4 py-2 border border-navy text-navy rounded-md hover:bg-navy hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
             aria-label="Go to previous page"
@@ -239,6 +242,7 @@ const listings = [
             </svg>
           </a>
           
+          <a
             href="#"
             class="px-4 py-2 bg-navy text-white rounded-md font-medium focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
             aria-label="Page 1, current page"
@@ -246,14 +250,14 @@ const listings = [
           >
             1
           </a>
-          
+          <a
             href="#"
             class="px-4 py-2 border border-navy text-navy rounded-md hover:bg-navy hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
             aria-label="Go to page 2"
           >
             2
           </a>
-          
+          <a
             href="#"
             class="px-4 py-2 border border-navy text-navy rounded-md hover:bg-navy hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
             aria-label="Go to page 3"
@@ -261,6 +265,7 @@ const listings = [
             3
           </a>
           
+          <a
             href="#"
             class="px-4 py-2 border border-navy text-navy rounded-md hover:bg-navy hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
             aria-label="Go to next page"
