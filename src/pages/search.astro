@@ -21,7 +21,6 @@ import Footer from '../components/Footer.astro';
         </h1>
         <div class="max-w-xl mx-auto">
           <form action="/search" method="get" role="search" class="flex gap-3">
-            <!-- Fixed: added text-white so sr-only label passes contrast on navy background -->
             <label for="hero-search" class="sr-only text-white">Search North Country Realty Group</label>
             <input
               type="search"
@@ -190,9 +189,10 @@ import Footer from '../components/Footer.astro';
     border-color: #C9A84C;
   }
 
+  /* Fixed: color #92690a → #78350f (amber-900) passes contrast on light highlight background */
   .result-excerpt mark {
-    background: rgba(201,168,76,0.2);
-    color: #92690a;
+    background: rgba(201,168,76,0.15);
+    color: #78350f;
     border-radius: 2px;
     padding: 0 2px;
   }
