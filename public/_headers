@@ -11,10 +11,3 @@
 
 /pagefind/*.js
   Content-Type: application/javascript
-
-
-/_astro/*.js
-  Content-Type: application/javascript
-
-/pagefind/*.js
-  Content-Type: application/javascript
