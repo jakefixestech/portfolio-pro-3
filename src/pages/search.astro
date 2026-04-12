@@ -236,6 +236,7 @@ import Footer from '../components/Footer.astro';
     try {
       // @ts-ignore
       pagefind = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+      await pagefind.options({ baseUrl: '/' });
     } catch {
       statusEl.innerHTML = '<p style="color:#6b7280;font-size:0.9rem;">Search index not available. Try again on the live site.</p>';
       resultsEl.style.minHeight = '0';
