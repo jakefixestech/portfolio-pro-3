@@ -21,7 +21,8 @@ import Footer from '../components/Footer.astro';
         </h1>
         <div class="max-w-xl mx-auto">
           <form action="/search" method="get" role="search" class="flex gap-3">
-            <label for="hero-search" class="sr-only">Search North Country Realty Group</label>
+            <!-- Fixed: added text-white so sr-only label passes contrast on navy background -->
+            <label for="hero-search" class="sr-only text-white">Search North Country Realty Group</label>
             <input
               type="search"
               id="hero-search"
@@ -261,7 +262,6 @@ import Footer from '../components/Footer.astro';
         return;
       }
 
-      /* Fixed: #C9A84C → #92690a for query highlight contrast on light background */
       statusEl.innerHTML = `<p style="color:#6b7280;font-size:0.9rem;margin-bottom:1.5rem;"><strong style="color:#1B2A4A;">${data.length}</strong> result${data.length === 1 ? '' : 's'} for "<strong style="color:#92690a;">${query}</strong>"</p>`;
 
       resultsEl.innerHTML = data.map((item: any) => `
