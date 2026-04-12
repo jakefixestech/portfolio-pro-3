@@ -6,7 +6,7 @@ const navLinks = [
 ];
 ---
 
-<header class="bg-white shadow-sm sticky top-0 z-50" role="banner">
+<header class="bg-white shadow-sm sticky top-0 z-50 transition-transform duration-300" role="banner">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
@@ -95,6 +95,36 @@ const navLinks = [
 </header>
 
 <script>
+  // Smart navbar — hide on scroll down, show on scroll up
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          // Scrolling down — hide and close mobile menu if open
+          header?.classList.add('-translate-y-full');
+          const menuButton = document.getElementById('mobile-menu-button');
+          if (menuButton?.getAttribute('aria-expanded') === 'true') {
+            menuButton.click();
+          }
+        } else {
+          // Scrolling up — show
+          header?.classList.remove('-translate-y-full');
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Mobile menu toggle
   const menuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const openIcon = document.getElementById('menu-icon-open');
@@ -102,11 +132,10 @@ const navLinks = [
 
   menuButton?.addEventListener('click', () => {
     const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-    
     menuButton.setAttribute('aria-expanded', String(!isExpanded));
     mobileMenu?.classList.toggle('hidden');
     openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.add('hidden');
+    closeIcon?.classList.toggle('hidden');
     menuButton?.focus();
   });
 
@@ -118,6 +147,18 @@ const navLinks = [
       openIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
       menuButton?.focus();
+    }
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (
+      !mobileMenu?.classList.contains('hidden') &&
+      !mobileMenu?.contains(target) &&
+      !menuButton?.contains(target)
+    ) {
+      menuButton?.click();
     }
   });
 </script>
