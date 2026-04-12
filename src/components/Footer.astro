@@ -53,7 +53,7 @@ const socialLinks = [
               target="_blank"
               rel="noopener noreferrer"
               class="w-10 h-10 rounded-full bg-navy-light hover:bg-gold text-white hover:text-navy flex items-center justify-center transition-colors"
-              aria-label={`Follow us on ${link.label}`}
+              aria-label={`Follow us on ${link.label} (opens in new tab)`}
             >
               {link.icon === "facebook" && (
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -75,9 +75,9 @@ const socialLinks = [
         </div>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Quick Links — Fixed: h3 → h2 to avoid skipped heading levels -->
       <div>
-        <h3 class="text-lg font-heading font-semibold mb-4">Quick Links</h3>
+        <h2 class="text-lg font-heading font-semibold mb-4">Quick Links</h2>
         <ul class="space-y-3" role="list">
           {navLinks.map((link) => (
             <li>
@@ -92,9 +92,9 @@ const socialLinks = [
         </ul>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Contact Info — Fixed: h3 → h2 to avoid skipped heading levels -->
       <div>
-        <h3 class="text-lg font-heading font-semibold mb-4">Contact Us</h3>
+        <h2 class="text-lg font-heading font-semibold mb-4">Contact Us</h2>
         <address class="not-italic space-y-3 text-gray-300">
           <p class="flex items-start gap-3">
             <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
