@@ -24,7 +24,7 @@ const navLinks = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center gap-8">
+      <div class="hidden lg:flex items-center gap-6">
         <ul class="flex items-center gap-6" role="list">
           {navLinks.map((link) => (
             <li>
@@ -37,6 +37,35 @@ const navLinks = [
             </li>
           ))}
         </ul>
+
+        <!-- Desktop Search -->
+        <div role="search">
+          <form action="/search" method="get">
+            <label for="desktop-search" class="sr-only">Search North Country Realty Group</label>
+            <div class="relative flex items-center">
+              <svg
+                class="absolute left-3 h-4 w-4 text-gray-400 pointer-events-none"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <input
+                type="search"
+                id="desktop-search"
+                name="q"
+                placeholder="Search..."
+                autocomplete="off"
+                class="w-36 focus:w-48 transition-all duration-300 bg-gray-50 border border-gray-300 rounded-lg pl-9 pr-3 py-2 text-sm text-navy placeholder-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+              />
+            </div>
+          </form>
+        </div>
+
         <a 
           href="/contact#consultation"
           class="inline-flex items-center justify-center px-6 py-2.5 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
@@ -45,22 +74,74 @@ const navLinks = [
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button
-        type="button"
-        id="mobile-menu-button"
-        class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-navy hover:bg-gray-100 transition-colors"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Toggle navigation menu"
-      >
-        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
+      <!-- Mobile right side: search + menu button -->
+      <div class="lg:hidden flex items-center gap-2">
+        <!-- Mobile Search Toggle -->
+        <button
+          type="button"
+          id="mobile-search-toggle"
+          class="inline-flex items-center justify-center p-2 rounded-md text-navy hover:bg-gray-100 transition-colors"
+          aria-label="Open search"
+          aria-expanded="false"
+          aria-controls="mobile-search-bar"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          id="mobile-menu-button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-navy hover:bg-gray-100 transition-colors"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Search Bar -->
+    <div id="mobile-search-bar" class="hidden lg:hidden pb-3" role="search">
+      <form action="/search" method="get" class="flex gap-2">
+        <label for="mobile-search" class="sr-only">Search North Country Realty Group</label>
+        <div class="relative flex-1">
+          <svg
+            class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="search"
+            id="mobile-search"
+            name="q"
+            placeholder="Search listings, agents..."
+            autocomplete="off"
+            class="w-full bg-gray-50 border border-gray-300 rounded-lg pl-9 pr-3 py-2.5 text-sm text-navy placeholder-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-gold hover:bg-gold-dark text-navy font-semibold px-4 py-2.5 rounded-lg text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+        >
+          Search
+        </button>
+      </form>
     </div>
 
     <!-- Mobile Menu -->
@@ -106,14 +187,12 @@ const navLinks = [
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > lastScrollY && currentScrollY > 80) {
-          // Scrolling down — hide and close mobile menu if open
           header?.classList.add('-translate-y-full');
           const menuButton = document.getElementById('mobile-menu-button');
           if (menuButton?.getAttribute('aria-expanded') === 'true') {
             menuButton.click();
           }
         } else {
-          // Scrolling up — show
           header?.classList.remove('-translate-y-full');
         }
 
@@ -159,6 +238,20 @@ const navLinks = [
       !menuButton?.contains(target)
     ) {
       menuButton?.click();
+    }
+  });
+
+  // Mobile search toggle
+  const searchToggle = document.getElementById('mobile-search-toggle');
+  const mobileSearchBar = document.getElementById('mobile-search-bar');
+
+  searchToggle?.addEventListener('click', () => {
+    const isExpanded = searchToggle.getAttribute('aria-expanded') === 'true';
+    searchToggle.setAttribute('aria-expanded', String(!isExpanded));
+    searchToggle.setAttribute('aria-label', isExpanded ? 'Open search' : 'Close search');
+    mobileSearchBar?.classList.toggle('hidden');
+    if (!isExpanded) {
+      (mobileSearchBar?.querySelector('input') as HTMLInputElement)?.focus();
     }
   });
 </script>
