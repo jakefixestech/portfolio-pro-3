@@ -233,15 +233,21 @@ import Footer from '../components/Footer.astro';
     `;
 
     let pagefind: any;
-    try {
-      // @ts-ignore
-      pagefind = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
-    } catch {
-      statusEl.innerHTML = '<p style="color:#6b7280;font-size:0.9rem;">Search index not available. Try again on the live site.</p>';
-      resultsEl.style.minHeight = '0';
-      quickLinks.hidden = false;
-      return;
-    }
+try {
+  // @ts-ignore
+  pagefind = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+  console.log('pagefind loaded:', pagefind);
+  const results = await pagefind.search(query);
+  console.log('results:', results);
+  const data = await Promise.all(results.results.map((r: any) => r.data()));
+  console.log('data:', data);
+} catch (err) {
+  console.error('pagefind error:', err);
+  statusEl.innerHTML = '<p style="color:#6b7280;font-size:0.9rem;">Search index not available. Try again on the live site.</p>';
+  resultsEl.style.minHeight = '0';
+  quickLinks.hidden = false;
+  return;
+}
 
     try {
       const results = await pagefind.search(query);
