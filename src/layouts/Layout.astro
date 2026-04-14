@@ -5,6 +5,9 @@ interface Props {
 }
 
 const { title, description = "North Country Realty Group - Your trusted real estate partner in Lancaster, NH and the surrounding North Country region." } = Astro.props;
+const siteUrl = "https://pro3.jakefixestech.com";
+const currentPath = Astro.url.pathname;
+const ogImage = `${siteUrl}/hero.webp`;
 ---
 
 <!doctype html>
@@ -16,7 +19,6 @@ const { title, description = "North Country Realty Group - Your trusted real est
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Non-blocking font load to eliminate CLS and render blocking -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=optional"
@@ -27,6 +29,21 @@ const { title, description = "North Country Realty Group - Your trusted real est
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=optional" rel="stylesheet" />
     </noscript>
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${siteUrl}${currentPath}`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="North Country Realty Group" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body class="min-h-screen flex flex-col">
     <a href="#main-content" class="skip-link">Skip to main content</a>
